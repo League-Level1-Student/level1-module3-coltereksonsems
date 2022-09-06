@@ -40,6 +40,14 @@ public class CowTimer {
 
     public void start() throws InterruptedException {
         
+    	for (int i = seconds; i > 0; i--) {
+			System.out.println(i); Thread.sleep(1000);
+		}
+    		System.out.println("moo!");
+    	
+    	
+    	
+    	
     }
 
     public void playSound(final String file) {
