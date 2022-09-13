@@ -5,7 +5,8 @@ import processing.core.PApplet;
 public class Frogger extends PApplet {
     static final int WIDTH = 800;
     static final int HEIGHT = 600;
-    
+    int x = 0;
+    int y = 0;
     @Override
     public void settings() {
         size(WIDTH, HEIGHT);
@@ -13,9 +14,29 @@ public class Frogger extends PApplet {
 
     @Override
     public void setup() {
-int hopdistance(x,y);
+Frog frog = new Frog();
     }
-
+   public void keyPressed()
+    {
+        if(key == CODED){
+            if(keyCode == UP)
+            {
+               frog(y++1);
+            }
+            else if(keyCode == DOWN)
+            {
+                //Frog Y position goes down 
+            }
+            else if(keyCode == RIGHT)
+            {
+                //Frog X position goes right
+            }
+            else if(keyCode == LEFT)
+            {
+                //Frog X position goes left
+            }
+        }
+    }
     @Override
     public void draw() {
 
