@@ -3,55 +3,61 @@ package _06_frogger;
 import processing.core.PApplet;
 
 public class Frogger extends PApplet {
-    static final int WIDTH = 800;
-    static final int HEIGHT = 600;
-    int x = 0;
-    int y = 0;
-    @Override
-    public void settings() {
-        size(WIDTH, HEIGHT);
-    }
+	static final int WIDTH = 800;
+	static final int HEIGHT = 600;
+	Frog frog = new Frog(400, 500);
 
-    @Override
-    public void setup() {
-Frog frog = new Frog();
-    }
-   public void keyPressed()
-    {
-        if(key == CODED){
-            if(keyCode == UP)
-            {
-               frog(y++1);
-            }
-            else if(keyCode == DOWN)
-            {
-                //Frog Y position goes down 
-            }
-            else if(keyCode == RIGHT)
-            {
-                //Frog X position goes right
-            }
-            else if(keyCode == LEFT)
-            {
-                //Frog X position goes left
-            }
-        }
-    }
-    @Override
-    public void draw() {
+	@Override
+	public void settings() {
+		size(WIDTH, HEIGHT);
+	}
 
-    background(0,0,255);
+	@Override
+	public void setup() {
 
-    fill(0,255,0);
-    ellipse(400,10,50,50);
-    	
-    	
-    	
-    	
-    }
-    static public void main(String[] args) {
-        PApplet.main(Frogger.class.getName());
-    }
-    
-    //Make Car class here
+	}
+
+	public void keyPressed() {
+		if (key == CODED) {
+			if (keyCode == UP) {
+				frog.y--;
+			} else if (keyCode == DOWN) {
+				// Frog Y position goes down
+			} else if (keyCode == RIGHT) {
+				// Frog X position goes right
+			} else if (keyCode == LEFT) {
+				// Frog X position goes left
+			}
+		}
+	}
+
+	@Override
+	public void draw() {
+
+		background(0, 0, 255);
+frog.draw();
+	
+
+	}
+
+	static public void main(String[] args) {
+		PApplet.main(Frogger.class.getName());
+	}
+
+	// Make Car class here
+	class Frog {
+		int x = 0;
+		int y = 0;
+
+		Frog(int x, int y) {
+			this.x = x;
+			this.y = y;
+		}
+
+		void draw() {
+			fill(0, 255, 0);
+			ellipse(x,y, 50, 50);
+		}
+	}
+
 }
