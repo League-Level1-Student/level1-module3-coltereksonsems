@@ -10,22 +10,28 @@ public class Frogger extends PApplet {
 	@Override
 	public void settings() {
 		size(WIDTH, HEIGHT);
+	
 	}
-
 	@Override
 	public void setup() {
 
 	}
 
 	public void keyPressed() {
-		if (key == CODED) {
-			if (keyCode == UP) {
-				frog.y--;
-			} else if (keyCode == DOWN) {
+
+		if (key == CODED)
+		{
+			
+			if (keyCode == UP && frog.y>30)  {
+				frog.y-=10;
+			} else if (keyCode == DOWN && frog.y<570) {
+				frog.y+=10;
 				// Frog Y position goes down
-			} else if (keyCode == RIGHT) {
+			} else if (keyCode == RIGHT && frog.x<770) {
+				frog.x+=10;
 				// Frog X position goes right
-			} else if (keyCode == LEFT) {
+			} else if (keyCode == LEFT && frog.x>30) {
+				frog.x-=10;
 				// Frog X position goes left
 			}
 		}
