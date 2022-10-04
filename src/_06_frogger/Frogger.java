@@ -51,6 +51,20 @@ frog.draw();
 	}
 
 	// Make Car class here
+	class Car {
+		int x = 0;
+		int y = 0;
+		
+		Car(int x, int y) {
+			this.x = x;
+			this.y = y;
+		}
+			void draw() {
+				fill(155,0,0);
+				rect(x,y,50,70);
+			
+			}
+	}
 	class Frog {
 		int x = 0;
 		int y = 0;
