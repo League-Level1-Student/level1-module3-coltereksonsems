@@ -6,7 +6,10 @@ public class Frogger extends PApplet {
 	static final int WIDTH = 800;
 	static final int HEIGHT = 600;
 	Frog frog = new Frog(400, 500);
-    Car car1 = new Car(600,700);
+	 Car car1 = new Car(50,50); 
+	 Car car2 = new Car(50,150); 
+	 Car car3 = new Car(50,250); 
+	 Car car4 = new Car(50,350);
 	@Override
 	public void settings() {
 		size(WIDTH, HEIGHT);
@@ -15,7 +18,7 @@ public class Frogger extends PApplet {
 
 	@Override
 	public void setup() {
-
+	
 	}
 
 	public void keyPressed() {
@@ -42,6 +45,10 @@ public class Frogger extends PApplet {
 
 		background(0, 0, 255);
 		frog.draw();
+		car1.draw();
+		car2.draw();
+		car3.draw();
+		car4.draw();
 
 	}
 
@@ -59,11 +66,14 @@ public class Frogger extends PApplet {
 			this.y = y;
 		}
 
-		void draw() {
-			fill(155, 0, 0);
-			rect(x, y, 50, 70);
+		void draw() {}
+			void display()
+			  {
+			    fill(0,255,0);
+			    rect(x , y,  100, 50);
+			  }
 
-		}
+		
 	}
 
 	class Frog {
