@@ -66,9 +66,7 @@ public class Frogger extends PApplet {
 			this.y = y;
 		}
 
-		void draw() {}
-			void display()
-			  {
+		void draw() {
 			    fill(0,255,0);
 			    rect(x , y,  100, 50);
 			  }
