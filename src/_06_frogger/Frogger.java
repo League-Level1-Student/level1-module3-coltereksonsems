@@ -1,15 +1,18 @@
 package _06_frogger;
 
+import java.util.Random;
+
 import processing.core.PApplet;
 
 public class Frogger extends PApplet {
 	static final int WIDTH = 800;
 	static final int HEIGHT = 600;
+	Random ran = new Random();
 	Frog frog = new Frog(400, 500);
-	 Car car1 = new Car(50,50); 
-	 Car car2 = new Car(50,150); 
-	 Car car3 = new Car(50,250); 
-	 Car car4 = new Car(50,350);
+	 Car car1 = new Car(ran.nextInt(400 - 1)+1,50); 
+	 Car car2 = new Car(ran.nextInt(400 - 1)+1,150); 
+	 Car car3 = new Car(ran.nextInt(400 - 1)+1,250); 
+	 Car car4 = new Car(ran.nextInt(400 - 1)+1,350); 
 	@Override
 	public void settings() {
 		size(WIDTH, HEIGHT);
@@ -58,6 +61,7 @@ public class Frogger extends PApplet {
 
 	// Make Car class here
 	class Car {
+		
 		int x = 0;
 		int y = 0;
 
