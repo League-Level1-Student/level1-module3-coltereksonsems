@@ -9,10 +9,10 @@ public class Frogger extends PApplet {
 	static final int HEIGHT = 600;
 	Random ran = new Random();
 	Frog frog = new Frog(400, 500);
-	 Car car1 = new Car(ran.nextInt(400 - 1)+1,50); 
-	 Car car2 = new Car(ran.nextInt(400 - 1)+1,150); 
-	 Car car3 = new Car(ran.nextInt(400 - 1)+1,250); 
-	 Car car4 = new Car(ran.nextInt(400 - 1)+1,350); 
+	 Car car1 = new Car(ran.nextInt(400 - 1)+1,100); 
+	 Car car2 = new Car(ran.nextInt(400 - 1)+1,200); 
+	 Car car3 = new Car(ran.nextInt(400 - 1)+1,300); 
+	 Car car4 = new Car(ran.nextInt(400 - 1)+1,400); 
 	@Override
 	public void settings() {
 		size(WIDTH, HEIGHT);
@@ -22,6 +22,8 @@ public class Frogger extends PApplet {
 	@Override
 	public void setup() {
 	
+		
+		
 	}
 
 	public void keyPressed() {
@@ -52,6 +54,10 @@ public class Frogger extends PApplet {
 		car2.draw();
 		car3.draw();
 		car4.draw();
+		car1.move();
+		car2.move();
+		car3.move();
+		car4.move();
 
 	}
 
@@ -73,8 +79,14 @@ public class Frogger extends PApplet {
 		void draw() {
 			    fill(0,255,0);
 			    rect(x , y,  100, 50);
-			  }
-
+		}
+void move(){
+	x-=1;
+	if (x==-10) {
+		x=800;
+	}
+			
+}
 		
 	}
 
